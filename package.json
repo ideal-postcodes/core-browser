@@ -1,0 +1,95 @@
+{
+  "name": "@ideal-postcodes/core-browser",
+  "version": "0.0.1",
+  "description": "Browser javascript client for api.ideal-postcodes.co.uk",
+  "author": {
+    "name": "Ideal Postcodes",
+    "email": "support@ideal-postcodes.co.uk",
+    "url": "https://ideal-postcodes.co.uk"
+  },
+  "bugs": {
+    "url": "https://github.com/ideal-postcodes/core-browser/issues",
+    "email": "support@ideal-postcodes.co.uk"
+  },
+  "homepage": "https://github.com/ideal-postcodes/core-browser",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ideal-postcodes/core-browser.git"
+  },
+  "scripts": {
+    "set-env": "node",
+    "build": "tsc",
+    "semantic-release": "semantic-release --no-ci",
+    "lint": "eslint lib/**/*.ts",
+    "coverage": "codecov",
+    "docs": "typedoc --mode file --out docs/ --name 'Ideal Postcodes Browser Client' --theme minimal --ignoreCompilerErrors --excludePrivate --hideGenerator lib/",
+    "prepublishOnly": "npm run test && npm run build",
+    "test": "karma start",
+    "test:browsers": "npm run test:browsers:latest && npm run test:browsers:legacy",
+    "test:browsers:latest": "karma start .config/latest.conf.ts",
+    "test:browsers:legacy": "karma start .config/legacy.conf.ts"
+  },
+  "release": {
+    "extends": "@cablanchard/semantic-release/dist/npm"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "prettier": {
+    "editorconfig": true,
+    "trailingComma": "es5"
+  },
+  "engines": {
+    "node": ">=8.0"
+  },
+  "keywords": [
+    "API",
+    "UK",
+    "Address",
+    "Postcode",
+    "Search",
+    "Ideal Postcodes",
+    "Browser"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@ideal-postcodes/core-interface": "~1.3.0"
+  },
+  "devDependencies": {
+    "@cablanchard/eslint-config": "~1.1.1",
+    "@cablanchard/semantic-release": "~1.2.1",
+    "@cablanchard/tsconfig": "~1.0.0",
+    "@ideal-postcodes/api-typings": "~1.1.0",
+    "@ideal-postcodes/supported-browsers": "~1.2.0",
+    "@types/chai": "~4.2.3",
+    "@types/dotenv": "~6.1.1",
+    "@types/karma": "~3.0.3",
+    "@types/mocha": "~5.2.7",
+    "@types/node": "~12.7.8",
+    "@types/puppeteer": "~1.20.2",
+    "babel-polyfill": "~6.26.0",
+    "chai": "~4.2.0",
+    "codecov": "~3.6.1",
+    "dotenv": "~8.1.0",
+    "eslint": "~6.5.1",
+    "karma": "~4.3.0",
+    "karma-cbt-launcher": "~0.4.6",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-cli": "~2.0.0",
+    "karma-coverage": "~2.0.1",
+    "karma-mocha": "~1.3.0",
+    "karma-polyfill": "~1.0.0",
+    "karma-typescript": "~4.1.1",
+    "mocha": "~6.2.1",
+    "nock": "~11.4.0",
+    "prettier": "~1.18.2",
+    "puppeteer": "~1.20.0",
+    "semantic-release": "~15.13.24",
+    "sinon": "~7.5.0",
+    "ts-node": "~8.4.1",
+    "typescript": "~3.6.4",
+    "typedoc": "~0.15.0"
+  }
+}
