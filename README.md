@@ -5,10 +5,10 @@
 > JavaScript browser client for api.ideal-postcodes.co.uk
 
 [![CircleCI](https://circleci.com/gh/ideal-postcodes/core-browser/tree/master.svg?style=svg)](https://circleci.com/gh/ideal-postcodes/core-browser/tree/master)
-[![Coverage Status](https://coveralls.io/repos/github/ideal-postcodes/core-browser/badge.svg?branch=master&t=nyUaqN)](https://coveralls.io/github/ideal-postcodes/core-browser?branch=master)
+[![codecov](https://codecov.io/gh/ideal-postcodes/core-browser/branch/master/graph/badge.svg?token=bjeFUcTPi5)](https://codecov.io/gh/ideal-postcodes/core-browser)
 ![Dependency Status](https://david-dm.org/ideal-postcodes/core-browser.svg)
 [![npm version](https://badge.fury.io/js/%40ideal-postcodes%2Fcore-browser.svg)](https://badge.fury.io/js/%40ideal-postcodes%2Fcore-browser)
-[![install size](https://packagephobia.now.sh/badge?p=@ideal-postcodes/core-browser)](https://packagephobia.now.sh/result?p=@ideal-postcodes/core-browser)
+![npm bundle size](https://img.shields.io/bundlephobia/minzip/@ideal-postcodes/core-browser)
 
 `@ideal-postcodes/core-browser` is the JavaScript browser client for api.ideal-postcodes.co.uk
 
