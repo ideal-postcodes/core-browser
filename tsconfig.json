@@ -4,6 +4,8 @@
     "removeComments": false,
     "strict": true,
     "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "outDir": "./dist",
     "declaration": true,
     "lib": ["es6", "dom"]
