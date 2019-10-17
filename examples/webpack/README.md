@@ -17,7 +17,7 @@ import { Client } from "@ideal-postcodes/core-browser";
 ## Run this demo
 
 ```bash
-npm install && npm start
+npm install && npm run build && npm start
 ```
 
 Open [http://localhost:8080/output](http://localhost:8080/output)
