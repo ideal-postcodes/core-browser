@@ -32,6 +32,7 @@ To support legacy browsers, you will also need to include `fetch` polyfill and E
 ## Example Setup
 
 - [Webpack](examples/webpack/)
+- [Parcel](examples/parcel/)
 
 ## Other JavaScript Clients
 
