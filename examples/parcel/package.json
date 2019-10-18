@@ -1,0 +1,22 @@
+{
+  "name": "parcel-demo",
+  "version": "1.0.0",
+  "description": "Parcel demo",
+  "private": true,
+  "scripts": {
+    "test": "parcel build index.html",
+    "start": "parcel index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "~6.26.3",
+    "babel-plugin-transform-runtime": "~6.23.0",
+    "babel-preset-env": "~1.7.0",
+    "parcel-bundler": "~1.12.4"
+  },
+  "dependencies": {
+    "@ideal-postcodes/core-browser": "file:../.."
+  }
+}
