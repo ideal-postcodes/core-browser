@@ -1,4 +1,4 @@
-# Webpack Example
+# Rollup Example
 
 ## Use in your app
 
@@ -17,7 +17,9 @@ import { Client } from "@ideal-postcodes/core-browser";
 ## Run this demo
 
 ```bash
-npm install && npm run build && npm start
+npm install && \   # Install deps
+npm run build && \ # Build bundle
+npm start          # Launch HTTP server
 ```
 
-Open [http://localhost:8080/output](http://localhost:8080/output)
+Open [http://localhost:8081](http://localhost:8081)

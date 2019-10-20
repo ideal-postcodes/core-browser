@@ -1,4 +1,4 @@
-# Webpack Example
+# Parcel Example
 
 ## Use in your app
 
@@ -17,7 +17,7 @@ import { Client } from "@ideal-postcodes/core-browser";
 ## Run this demo
 
 ```bash
-npm install && npm run build && npm start
+npm install && npm start
 ```
 
-Open [http://localhost:8080/output](http://localhost:8080/output)
+Open [http://localhost:1234](http://localhost:1234)
