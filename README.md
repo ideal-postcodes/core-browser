@@ -18,7 +18,17 @@ Tested against [a suite of modern and legacy, mobile and desktop browsers](https
 
 This library is transpiled to modern ES6 and modules. It should be consumed by a bundler or transpiler (e.g. webpack, parcel, rollup) for minification, module resolution and specific browser support.
 
-To support legacy browsers, you will also need to include `fetch` polyfill and ES3 transpilation.
+Depending on the legacy browsers you wish to support, you may need to:
+- Transpile to an older subset of JavaScript (e.g. ES3)
+- Polyfill `fetch` or `Promise`
+
+Bundled javascript clients in UMD and ESM formats supporting various legacy browsers can be found at [github.com/ideal-postcodes/core-browser-bundled](https://github.com/ideal-postcodes/core-browser-bundled) and on [npm](https://www.npmjs.com/package/@ideal-postcodes/core-browser-bundled). Latest can be downloaded from:
+
+- [core-browser.umd.min.js@latest](https://cdn.jsdelivr.net/npm/@ideal-postcodes/core-browser-bundled/dist/core-browser.umd.min.js)
+- [core-browser.umd.ie11.min.js@latest](https://cdn.jsdelivr.net/npm/@ideal-postcodes/core-browser-bundled/dist/core-browser.umd.ie11.min.js)
+- [core-browser.esm.min.js@latest](https://cdn.jsdelivr.net/npm/@ideal-postcodes/core-browser-bundled/dist/core-browser.esm.min.js)
+
+Please follow the instructions on [jsdelivr.com/core-browser-bundled](https://www.jsdelivr.com/package/npm/@ideal-postcodes/core-browser-bundled) to pin a specific version in production.
 
 ## Links
 
