@@ -62,7 +62,6 @@ const handleError = (error: Error): Promise<never> => {
   return Promise.reject(idpcError);
 };
 
-
 /**
  * Implements browser agent for core-interface client
  *
@@ -85,33 +84,39 @@ export class Agent implements IAgent {
 
   constructor(public config: RequestInit = {}) {}
 
-  public async http(httpRequest: HttpRequest): Promise<HttpResponse> {
+  // Return AbortController instance if present
+  private abortController(): AbortController | undefined {
+    if (window.AbortController === undefined) return;
+    return new window.AbortController();
+  }
+
+  public http(httpRequest: HttpRequest): Promise<HttpResponse> {
+    const { body, method, url, header, query, timeout } = httpRequest;
+    const requestInfo: RequestInit = {
+      method,
+      headers: header,
+      ...this.defaultConfig,
+      ...this.config,
+    };
+
+    const abortController = this.abortController();
+    if (abortController) requestInfo.signal = abortController.signal;
+
     try {
-      const { body, method, url, header, query, timeout } = httpRequest;
-      const requestInfo: RequestInit = {
-        method,
-        headers: header,
-        ...this.defaultConfig,
-        ...this.config,
-      };
-      // Append body if present
       if (body !== undefined) requestInfo.body = JSON.stringify(body);
-
-      // Add AbortController if available in browser
-      let abortController;
-      if (window.AbortController !== undefined) {
-        abortController = new window.AbortController();
-        requestInfo.signal = abortController.signal;
-      }
-
-      // Assemble and dispatch request
-      const request = new Request(`${url}${parseQuery(query)}`, requestInfo);
-      const response = await timedFetch(request, timeout, abortController);
-      const responseBody = await response.json();
-
-      return toHttpResponse(httpRequest, response, responseBody);
     } catch (error) {
       return handleError(error);
     }
+
+    const request = new Request(`${url}${parseQuery(query)}`, requestInfo);
+
+    let response: Response;
+    return timedFetch(request, timeout, abortController)
+      .then(r => {
+        response = r;
+        return r.json();
+      })
+      .then(responseBody => toHttpResponse(httpRequest, response, responseBody))
+      .catch(handleError);
   }
 }
