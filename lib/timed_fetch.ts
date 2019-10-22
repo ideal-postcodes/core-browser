@@ -20,7 +20,7 @@ export const timedFetch = (
   timeout: number,
   abortController?: AbortController
 ): Promise<Response> =>
-  new Promise(async (resolve, reject) => {
+  new Promise((resolve, reject) => {
     setTimeout(() => {
       if (abortController) abortController.abort();
       reject(timeoutError(timeout, request));
