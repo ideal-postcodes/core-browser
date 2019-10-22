@@ -1,6 +1,6 @@
 {
   "name": "@ideal-postcodes/core-browser",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Browser javascript client for api.ideal-postcodes.co.uk",
   "author": {
     "name": "Ideal Postcodes",
