@@ -27,8 +27,6 @@ jobs:
   cbt:
     docker:
       - image: circleci/node:12
-        environment:
-          NODE_ENV: development
     working_directory: ~/repo
     steps:
       - checkout
@@ -40,22 +38,29 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package-lock.json" }}
-      - run: npm run test:browsers:latest
       - run: npm run test:browsers:legacy
+      - run: npm run test:browsers:latest
 
 workflows:
   version: 2
   push:
     jobs:
       - headless
-      - cbt
+  push_cbt:
+    jobs:
+      - cbt:
+          filters:
+            branches:
+              only:
+                - master
+                - /.*-cbt/
   scheduled:
     jobs:
       - headless
       - cbt
     triggers:
       - schedule:
-          cron: "8 8 * * 1-5"
+          cron: "8 8 * * 1"
           filters:
             branches:
               only:
