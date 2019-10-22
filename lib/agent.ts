@@ -6,10 +6,21 @@ import {
 } from "@ideal-postcodes/core-interface";
 import { timedFetch } from "./timed_fetch";
 
+/**
+ * @hidden
+ */
 const { IdealPostcodesError } = errors;
 
+/**
+ * @hidden
+ */
 type StringMap = Record<string, string>;
 
+/**
+ * Rewrites `key` `value` to uri encoded query string component
+ *
+ * @hidden
+ */
 const toParam = (key: string, value: string): string =>
   `${encodeURIComponent(key)}=${encodeURIComponent(value)}`;
 

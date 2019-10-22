@@ -1,6 +1,11 @@
 import { errors } from "@ideal-postcodes/core-interface";
 const { IdealPostcodesError } = errors;
 
+/**
+ * Returns Ideal Postcode timeout error
+ *
+ * @hidden
+ */
 const timeoutError = (timeout: number, request: RequestInfo): Error =>
   new IdealPostcodesError({
     message: `Request timed out after ${timeout}ms`,
