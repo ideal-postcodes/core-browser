@@ -2,7 +2,7 @@
   <img src="https://img.ideal-postcodes.co.uk/Ideal%20Postcodes%20Browser%20Logo@3x.png" alt="Ideal Postcodes Javascript Client">
 </h1>
 
-> JavaScript browser client for api.ideal-postcodes.co.uk
+> JavaScript (browser) client for api.ideal-postcodes.co.uk
 
 [![CircleCI](https://circleci.com/gh/ideal-postcodes/core-browser/tree/master.svg?style=svg)](https://circleci.com/gh/ideal-postcodes/core-browser/tree/master)
 [![codecov](https://codecov.io/gh/ideal-postcodes/core-browser/branch/master/graph/badge.svg?token=bjeFUcTPi5)](https://codecov.io/gh/ideal-postcodes/core-browser)
@@ -12,30 +12,24 @@
 
 `@ideal-postcodes/core-browser` is the JavaScript browser client for api.ideal-postcodes.co.uk
 
-Our JavaScript client implements a common interface defined at [`@ideal-postcodes/core-interface`](https://github.com/ideal-postcodes/core-interface). In depth client documentation can be found at [core-interface.ideal-postcodes.dev](https://core-interface.ideal-postcodes.dev).
+Our JavaScript client implements a common interface defined at [@ideal-postcodes/core-interface](https://github.com/ideal-postcodes/core-interface).
+
+High level client documentation can be found at [core-interface](https://github.com/ideal-postcodes/core-interface/blob/master/README.md).
+
+In depth client documentation can be found at [core-interface.ideal-postcodes.dev](https://core-interface.ideal-postcodes.dev).
 
 Tested against [a suite of modern and legacy, mobile and desktop browsers](https://github.com/ideal-postcodes/supported-browsers).
 
-This library is transpiled to modern ES6 and modules. It should be consumed by a bundler or transpiler (e.g. webpack, parcel, rollup) for minification, module resolution and specific browser support.
+`@ideal-postcodes/core-browser`should be consumed by a bundler or transpiler (e.g. webpack, parcel, rollup) for minification, module resolution and specific browser support.
 
-Depending on the legacy browsers you wish to support, you may need to:
-- Transpile to an older subset of JavaScript (e.g. ES3)
-- Polyfill `fetch` or `Promise`
-
-Bundled javascript clients in UMD and ESM formats supporting various legacy browsers can be found at [github.com/ideal-postcodes/core-browser-bundled](https://github.com/ideal-postcodes/core-browser-bundled) and on [npm](https://www.npmjs.com/package/@ideal-postcodes/core-browser-bundled). Latest can be downloaded from:
-
-- [core-browser.umd.min.js@latest](https://cdn.jsdelivr.net/npm/@ideal-postcodes/core-browser-bundled/dist/core-browser.umd.min.js)
-- [core-browser.umd.ie11.min.js@latest](https://cdn.jsdelivr.net/npm/@ideal-postcodes/core-browser-bundled/dist/core-browser.umd.ie11.min.js)
-- [core-browser.esm.min.js@latest](https://cdn.jsdelivr.net/npm/@ideal-postcodes/core-browser-bundled/dist/core-browser.esm.min.js)
-
-Please follow the instructions on [jsdelivr.com/core-browser-bundled](https://www.jsdelivr.com/package/npm/@ideal-postcodes/core-browser-bundled) to pin a specific version in production.
+[core-browser-bundled](https://github.com/ideal-postcodes/core-browser-bundled) provides pre-bundled versions of `core-browser`, which can be immediately dropped into a page.
 
 ## Links
 
 - [Configuration & Usage](#configuration--usage)
 - [Quickstart](#quickstart)
-- [Client Documentation](https://core-interface.ideal-postcodes.dev/#documentation)
-- [Core JS API Client Documentation](https://core-interface.ideal-postcodes.dev/)
+- [Client Documentation](https://github.com/ideal-postcodes/core-interface/blob/master/README.md)
+- [In Depth Client Documentation](https://core-interface.ideal-postcodes.dev/#documentation)
 - [npm Module](https://www.npmjs.com/package/@ideal-postcodes/core-browser)
 - [GitHub Repository](https://github.com/ideal-postcodes/core-browser)
 
