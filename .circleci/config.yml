@@ -24,37 +24,13 @@ jobs:
       - run: npm run lint
       - run: npm run build
       - run: npm run coverage
-  cbt:
-    docker:
-      - image: circleci/node:12
-    working_directory: ~/repo
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}
-      - run: npm install
-      - run: npm update -g cbt_tunnels
-      - save_cache:
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package-lock.json" }}
-      - run: npm run test:browsers:legacy
-      - run: npm run test:browsers:latest
 
 workflows:
   version: 2
   push:
     jobs:
       - headless
-  push_cbt:
-    jobs:
-      - cbt:
-          filters:
-            branches:
-              only:
-                - master
-                - /.*-cbt/
+ 
   scheduled:
     jobs:
       - headless
