@@ -1,3 +1,15 @@
+# [1.1.0](https://github.com/ideal-postcodes/core-browser/compare/1.0.2...1.1.0) (2019-12-06)
+
+
+### Bug Fixes
+
+* **CBT:** Patch CBT lib ([7b58455](https://github.com/ideal-postcodes/core-browser/commit/7b5845533e796f47e6238799d0d9ef77c59048ef))
+
+
+### Features
+
+* **Core-Interface:** Update core-interface to 1.4.0 ([075f5c9](https://github.com/ideal-postcodes/core-browser/commit/075f5c9b150ae828d8d58ca4f25b326b6714efeb))
+
 ## [1.0.2](https://github.com/ideal-postcodes/core-browser/compare/1.0.1...1.0.2) (2019-10-22)
 
 
