@@ -38,6 +38,7 @@ Tested against [a suite of modern and legacy, mobile and desktop browsers](https
 - [Webpack](examples/webpack/)
 - [Parcel](examples/parcel/)
 - [Rollup](examples/rollup/)
+- [Polymer](examples/polyer/)
 
 ## Other JavaScript Clients
 
