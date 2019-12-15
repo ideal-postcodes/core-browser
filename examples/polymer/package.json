@@ -1,0 +1,22 @@
+{
+  "name": "polymer-demo",
+  "version": "1.0.0",
+  "flat": true,
+  "description": "Polymer demo",
+  "main": "index.html",
+  "scripts": {
+    "test": "polymer build",
+    "start": "polymer serve --open"
+  },
+  "dependencies": {
+    "@ideal-postcodes/core-browser-bundled": "~1.2.0",
+    "@polymer/polymer": "~3.0.0",
+    "@webcomponents/webcomponentsjs": "~1.0.20"
+  },
+  "resolutions": {
+    "@webcomponents/webcomponentsjs": "1.0.20"
+  },
+  "devDependencies": {
+    "polymer-cli": "~1.9.11"
+  }
+}
