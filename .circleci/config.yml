@@ -34,7 +34,6 @@ workflows:
   scheduled:
     jobs:
       - headless
-      - cbt
     triggers:
       - schedule:
           cron: "8 8 * * 1"
