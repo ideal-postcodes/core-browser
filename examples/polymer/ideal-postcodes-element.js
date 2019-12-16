@@ -5,6 +5,10 @@ import { Client } from "@ideal-postcodes/core-browser-bundled";
 class IdealPostcodesElement extends PolymerElement {
   constructor() {
     super();
+
+    // Required to enable test suite to find test element in shadowdom
+    this.root = this.attachShadow({ mode: "open" });
+
     const client = new Client({ api_key: "iddqd" });
     const postcode = "ID1 1QD";
     client

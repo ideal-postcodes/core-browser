@@ -5,8 +5,10 @@
   "description": "Polymer demo",
   "main": "index.html",
   "scripts": {
-    "test": "polymer build",
-    "start": "polymer serve --open"
+    "build": "polymer build",
+    "start": "polymer serve --open",
+    "cy:run": "cypress run",
+    "test": "start-server-and-test 'polymer serve' http://localhost:8081 cy:run"
   },
   "dependencies": {
     "@ideal-postcodes/core-browser-bundled": "~1.2.0",
@@ -17,6 +19,8 @@
     "@webcomponents/webcomponentsjs": "1.0.20"
   },
   "devDependencies": {
-    "polymer-cli": "~1.9.11"
+    "cypress": "~3.8.0",
+    "polymer-cli": "~1.9.11",
+    "start-server-and-test": "~1.10.6"
   }
 }

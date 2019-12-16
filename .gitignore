@@ -42,3 +42,5 @@ coverage
 coverage.lcov
 /.env
 docs
+videos/
+screenshots/
