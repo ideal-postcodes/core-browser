@@ -4,7 +4,7 @@
 
 ## Execute test suite for demo on CI
 .PHONY: ci
-ci: test-install && test-run
+ci: test-install test-run
 
 ## npm install in test directory
 .PHONY: test-install
