@@ -86,7 +86,7 @@
     "nock": "~11.7.0",
     "prettier": "~1.19.1",
     "puppeteer": "~2.0.0",
-    "semantic-release": "~15.13.24",
+    "semantic-release": "~15.14.0",
     "sinon": "~8.0.0",
     "ts-node": "~8.5.0",
     "typescript": "~3.7.2",
