@@ -5,23 +5,26 @@
   "private": true,
   "scripts": {
     "build": "rollup --config config.js",
-    "test": "npm run build",
-    "start": "http-server"
+    "test": "npm run build && start-server-and-test 8081 cy:run",
+    "start": "http-server --port 8081",
+    "cy:run": "cypress run"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "~7.8.0",
-    "@babel/preset-env": "~7.8.2",
-    "http-server": "~0.12.1",
-    "rollup": "~1.29.0",
+    "@babel/core": "~7.7.7",
+    "@babel/preset-env": "~7.7.7",
+    "http-server": "~0.12.0",
+    "rollup": "~1.28.0",
     "rollup-plugin-babel": "~4.3.3",
     "rollup-plugin-commonjs": "~10.1.0",
-    "rollup-plugin-node-resolve": "~5.2.0"
+    "rollup-plugin-node-resolve": "~5.2.0",
+    "cypress": "~3.8.0",
+    "start-server-and-test": "~1.10.6"
   },
   "dependencies": {
-    "@ideal-postcodes/core-browser": "file:../..",
-    "core-js": "~3.6.3"
+    "@ideal-postcodes/core-browser": "~1.1.0",
+    "core-js": "~3.6.2"
   }
 }

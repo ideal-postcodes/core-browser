@@ -4,8 +4,9 @@
   "description": "Parcel demo",
   "private": true,
   "scripts": {
-    "test": "parcel build index.html",
-    "start": "parcel index.html"
+    "test": "start-server-and-test http://localhost:8081 cy:run",
+    "cy:run": "cypress run",
+    "start": "parcel index.html --port 8081"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +20,6 @@
     "start-server-and-test": "~1.10.6"
   },
   "dependencies": {
-    "@ideal-postcodes/core-browser": "file:../.."
+    "@ideal-postcodes/core-browser": "^1.1.0"
   }
 }
