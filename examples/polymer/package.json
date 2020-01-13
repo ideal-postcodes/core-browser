@@ -19,7 +19,7 @@
     "@webcomponents/webcomponentsjs": "1.0.20"
   },
   "devDependencies": {
-    "cypress": "~3.8.0",
+    "cypress": "^3.8.1",
     "polymer-cli": "~1.9.11",
     "start-server-and-test": "~1.10.6"
   }
