@@ -15,7 +15,7 @@
     "@babel/core": "~7.8.0",
     "@babel/preset-env": "~7.8.2",
     "http-server": "~0.12.1",
-    "rollup": "~1.28.0",
+    "rollup": "~1.29.0",
     "rollup-plugin-babel": "~4.3.3",
     "rollup-plugin-commonjs": "~10.1.0",
     "rollup-plugin-node-resolve": "~5.2.0"
