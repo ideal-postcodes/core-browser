@@ -35,10 +35,13 @@ Tested against [a suite of modern and legacy, mobile and desktop browsers](https
 
 ## Example Setup
 
-- [Webpack ![Webpack Status](https://github.com/ideal-postcodes/core-browser/workflows/Webpack%20Demo/badge.svg)](examples/webpack/)
-- [Parcel ![Parcel Status](https://github.com/ideal-postcodes/core-browser/workflows/Parcel%20Demo/badge.svg)](examples/parcel/)
-- [Rollup ![Rollup Status](https://github.com/ideal-postcodes/core-browser/workflows/Rollup%20Demo/badge.svg)](examples/rollup/)
-- [Polymer ![Polymer Status](https://github.com/ideal-postcodes/core-browser/workflows/Polymer%20Demo/badge.svg)](examples/polymer/)
+[![Webpack Status](https://github.com/ideal-postcodes/core-browser/workflows/Webpack%20Demo/badge.svg)](examples/webpack/)
+
+[![Parcel Status](https://github.com/ideal-postcodes/core-browser/workflows/Parcel%20Demo/badge.svg)](examples/parcel/)
+
+[![Rollup Status](https://github.com/ideal-postcodes/core-browser/workflows/Rollup%20Demo/badge.svg)](examples/rollup/)
+
+[![Polymer Status](https://github.com/ideal-postcodes/core-browser/workflows/Polymer%20Demo/badge.svg)](examples/polymer/)
 
 ## Other JavaScript Clients
 
