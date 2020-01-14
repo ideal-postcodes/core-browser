@@ -1,16 +1,11 @@
 {
   "name": "parcel-demo",
   "version": "1.0.0",
-  "description": "Parcel demo",
-  "private": true,
   "scripts": {
     "test": "start-server-and-test http://localhost:8081 cy:run",
     "cy:run": "cypress run",
     "start": "parcel index.html --port 8081"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
     "babel-core": "~6.26.3",
     "babel-plugin-transform-runtime": "~6.23.0",
@@ -20,6 +15,6 @@
     "start-server-and-test": "~1.10.6"
   },
   "dependencies": {
-    "@ideal-postcodes/core-browser": "^1.1.0"
+    "@ideal-postcodes/core-browser": "~1.1.0"
   }
 }
