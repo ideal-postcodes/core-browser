@@ -47,6 +47,7 @@ Tested against [a suite of modern and legacy, mobile and desktop browsers](https
 
 - [Node.js Client Repository](https://github.com/ideal-postcodes/core-node)
 - [Bundled Browser Client Repository](https://github.com/ideal-postcodes/core-browser-bundled)
+- [Axios-backed Client Repository](https://github.com/ideal-postcodes/core-axios)
 
 ## Documentation
 
