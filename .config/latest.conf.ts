@@ -3,27 +3,25 @@
  *
  * Runs on cross browser platform
  */
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+import {
+  latestDesktop,
+  latestMobile,
+  config as sauceConfig,
+} from "@ideal-postcodes/supported-browsers";
+import * as defaults from "./config";
 
-import "babel-polyfill";
-import * as basic from "./config";
-import { getBrowsers } from "./conf.browser";
+const customLaunchers = {
+  ...latestDesktop,
+  ...latestMobile,
+};
 
-const customLaunchers = getBrowsers("core-browser-latest", {
-  latest: true,
-  // browserName: "Chrome",
-});
-const cbtConfig = {};
-
-module.exports = (config: any): void =>
+module.exports = (config: any): void => {
+  console.log(sauceConfig({ testName: "Core-Browser", defaults }));
   config.set({
-    ...basic,
-    plugins: [
-      "karma-mocha",
-      "karma-typescript",
-      "karma-polyfill",
-      "karma-cbt-launcher",
-    ],
-    cbtConfig,
+    ...sauceConfig({ testName: "Core-Browser", defaults }),
     browsers: Object.keys(customLaunchers),
     customLaunchers,
   });
+};

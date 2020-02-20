@@ -17,7 +17,6 @@ module.exports = (config: any): void =>
     plugins: [
       "karma-mocha",
       "karma-typescript",
-      "karma-polyfill",
       "karma-chrome-launcher",
     ],
     karmaTypescriptConfig: {

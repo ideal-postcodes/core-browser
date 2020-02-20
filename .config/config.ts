@@ -15,7 +15,11 @@ export const karmaTypescriptConfig = {
   compilerOptions: {},
 };
 
-export const files = [{ pattern: "lib/**/*.ts" }, { pattern: "test/**/*.ts" }];
+export const files = [
+  { pattern: "lib/**/*.ts" },
+  { pattern: "test/**/*.ts" },
+  "node_modules/whatwg-fetch/dist/fetch.umd.js",
+];
 
 export const reporters = ["dots", "karma-typescript"];
 
