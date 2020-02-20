@@ -27,7 +27,7 @@ const testRequestHeaders = (
   header: Record<string, string>
 ): void => {
   Object.keys(header).forEach(key => {
-    assert.equal(request.headers.get(key), header[key]);
+    assert.equal(request.headers[key], header[key]);
   });
 };
 
@@ -103,12 +103,10 @@ describe("Agent", () => {
       await agent.http({ method, timeout, url, header, query });
 
       sinon.assert.calledOnce(stub);
-      const request = stub.getCall(0).args[0];
-      testRequest(request, {
-        method,
-        url: url + parseQuery(query),
-        ...requestDefaults,
-      });
+      const requestedUrl = stub.getCall(0).args[0];
+      const request = stub.getCall(0).args[1];
+      assert.equal(url + parseQuery(query), requestedUrl);
+      testRequest(request, { method, ...requestDefaults });
       testRequestHeaders(request, header);
     });
 
@@ -129,18 +127,23 @@ describe("Agent", () => {
 
       const stub = sinon.stub(window, "fetch").resolves(response);
 
-      await agent.http({ body, method, timeout, url, header, query });
+      const httpResponse = await agent.http({
+        body,
+        method,
+        timeout,
+        url,
+        header,
+        query,
+      });
 
       sinon.assert.calledOnce(stub);
-      const request = stub.getCall(0).args[0];
-      testRequest(request, {
-        method,
-        url: url + parseQuery(query),
-        ...requestDefaults,
-      });
+      const requestedUrl = stub.getCall(0).args[0];
+      const request = stub.getCall(0).args[1];
+      const httpRequest = stub.getCall(0);
+      assert.equal(url + parseQuery(query), requestedUrl);
+      testRequest(request, { method, ...requestDefaults });
       testRequestHeaders(request, header);
-      const requestBody = await request.json();
-      assert.deepEqual(body, requestBody);
+      assert.deepEqual(body, httpResponse.body);
     });
 
     describe("Configuration", () => {
@@ -159,7 +162,7 @@ describe("Agent", () => {
         await agent.http({ method, timeout: 1000, url, header, query });
 
         sinon.assert.calledOnce(stub);
-        const request = stub.getCall(0).args[0];
+        const request = stub.getCall(0).args[1];
         testRequest(request, {
           ...newDefaults,
         });
