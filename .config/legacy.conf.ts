@@ -3,18 +3,21 @@
  *
  * Runs on cross browser platform
  */
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+import {
+  legacyDesktop,
+  legacyMobile,
+  config as sauceConfig,
+} from "@ideal-postcodes/supported-browsers";
+import * as defaults from "./config";
 
-import "babel-polyfill";
-import * as basic from "./config";
-import { getBrowsers } from "./conf.browser";
+const customLaunchers = {
+  ...legacyDesktop,
+  ...legacyMobile,
+};
 
-const customLaunchers = getBrowsers("core-browser-legacy", {
-  legacy: true,
-  // browserName: "Internet Explorer",
-});
-const cbtConfig = {};
-
-basic.karmaTypescriptConfig.compilerOptions = {
+defaults.karmaTypescriptConfig.compilerOptions = {
   target: "ES3",
   lib: [
     "dom",
@@ -32,20 +35,9 @@ basic.karmaTypescriptConfig.compilerOptions = {
   ],
 };
 
-basic.polyfill.push("fetch");
-basic.polyfill.push("Array.prototype.includes");
-basic.polyfill.push("String.prototype.includes");
-
 module.exports = (config: any): void =>
   config.set({
-    ...basic,
-    plugins: [
-      "karma-mocha",
-      "karma-typescript",
-      "karma-polyfill",
-      "karma-cbt-launcher",
-    ],
-    cbtConfig,
+    ...sauceConfig({ testName: "Core-Browser", defaults }),
     browsers: Object.keys(customLaunchers),
     customLaunchers,
   });
