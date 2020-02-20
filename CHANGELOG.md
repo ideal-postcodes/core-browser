@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/ideal-postcodes/core-browser/compare/1.2.0...1.2.1) (2020-02-20)
+
+
+### Performance Improvements
+
+* **Request:** Drop use of Request ([3a328f6](https://github.com/ideal-postcodes/core-browser/commit/3a328f6634820e87c19c8ba3694416970507f928))
+
 # [1.2.0](https://github.com/ideal-postcodes/core-browser/compare/1.1.0...1.2.0) (2020-02-07)
 
 
