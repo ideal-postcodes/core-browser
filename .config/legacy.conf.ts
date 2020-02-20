@@ -35,9 +35,12 @@ defaults.karmaTypescriptConfig.compilerOptions = {
   ],
 };
 
-module.exports = (config: any): void =>
+module.exports = (config: any): void => {
+  const sauce = sauceConfig({ testName: "Core-Browser", defaults });
+  sauce.files.push("node_modules/promise-polyfill/dist/polyfill.min.js");
   config.set({
-    ...sauceConfig({ testName: "Core-Browser", defaults }),
+    ...sauce,
     browsers: Object.keys(customLaunchers),
     customLaunchers,
   });
+};
