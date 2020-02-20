@@ -6,11 +6,15 @@ const { IdealPostcodesError } = errors;
  *
  * @hidden
  */
-const timeoutError = (timeout: number, request: RequestInfo): Error =>
+const timeoutError = (
+  timeout: number,
+  request: RequestInit,
+  url: string
+): Error =>
   new IdealPostcodesError({
     message: `Request timed out after ${timeout}ms`,
     httpStatus: 0,
-    metadata: { request },
+    metadata: { request, url },
   });
 
 /**
@@ -21,14 +25,15 @@ const timeoutError = (timeout: number, request: RequestInfo): Error =>
  * @hidden
  */
 export const timedFetch = (
-  request: RequestInfo,
+  url: string,
+  requestInit: RequestInit,
   timeout: number,
   abortController?: AbortController
 ): Promise<Response> =>
   new Promise((resolve, reject) => {
     setTimeout(() => {
       if (abortController) abortController.abort();
-      reject(timeoutError(timeout, request));
+      reject(timeoutError(timeout, requestInit, url));
     }, timeout);
-    fetch(request).then(resolve, reject);
+    fetch(url, requestInit).then(resolve, reject);
   });

@@ -25,7 +25,7 @@ describe("timedFetch", () => {
 
   it("returns successful response if request inside of timeout", async () => {
     const stub = sinon.stub(window, "fetch").resolves(defaultResponse());
-    await timedFetch(new Request(url, { method, headers: header }), 1000);
+    await timedFetch(url, { method, headers: header }, 1000);
     sinon.assert.calledOnce(stub);
   });
 
@@ -37,7 +37,7 @@ describe("timedFetch", () => {
       })
     );
     try {
-      await timedFetch(new Request(url, { method, headers: header }), timeout);
+      await timedFetch(url, { method, headers: header }, timeout);
     } catch (error) {
       assert.instanceOf(error, IdealPostcodesError);
       assert.equal(error.message, `Request timed out after ${timeout}ms`);
@@ -50,7 +50,7 @@ describe("timedFetch", () => {
     const error = new Error("Generic error");
     const stub = sinon.stub(window, "fetch").rejects(error);
     try {
-      await timedFetch(new Request(url, { method, headers: header }), 1000);
+      await timedFetch(url, { method, headers: header }, 1000);
     } catch (err) {
       assert.equal(error, err);
       sinon.assert.calledOnce(stub);

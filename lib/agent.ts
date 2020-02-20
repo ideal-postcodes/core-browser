@@ -103,7 +103,7 @@ export class Agent implements IAgent {
 
   public http(httpRequest: HttpRequest): Promise<HttpResponse> {
     const { body, method, url, header, query, timeout } = httpRequest;
-    const requestInfo: RequestInit = {
+    const requestInit: RequestInit = {
       method,
       headers: header,
       ...this.defaultConfig,
@@ -111,18 +111,18 @@ export class Agent implements IAgent {
     };
 
     const abortController = this.abortController();
-    if (abortController) requestInfo.signal = abortController.signal;
+    if (abortController) requestInit.signal = abortController.signal;
 
     try {
-      if (body !== undefined) requestInfo.body = JSON.stringify(body);
+      if (body !== undefined) requestInit.body = JSON.stringify(body);
     } catch (error) {
       return handleError(error);
     }
 
-    const request = new Request(`${url}${parseQuery(query)}`, requestInfo);
+    const uri = `${url}${parseQuery(query)}`;
 
     let response: Response;
-    return timedFetch(request, timeout, abortController)
+    return timedFetch(uri, requestInit, timeout, abortController)
       .then(r => {
         response = r;
         return r.json();
