@@ -17,11 +17,9 @@ const customLaunchers = {
   ...latestMobile,
 };
 
-module.exports = (config: any): void => {
-  console.log(sauceConfig({ testName: "Core-Browser", defaults }));
+module.exports = (config: any): void =>
   config.set({
     ...sauceConfig({ testName: "Core-Browser", defaults }),
     browsers: Object.keys(customLaunchers),
     customLaunchers,
   });
-};
