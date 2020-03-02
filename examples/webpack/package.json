@@ -16,7 +16,7 @@
     "webpack": "~4.41.6",
     "webpack-cli": "~3.3.11",
     "webpack-dev-server": "~3.10.3",
-    "cypress": "~4.0.2",
+    "cypress": "~4.1.0",
     "start-server-and-test": "~1.10.6"
   },
   "dependencies": {
