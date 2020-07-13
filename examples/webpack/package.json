@@ -17,7 +17,7 @@
     "webpack-cli": "~3.3.12",
     "webpack-dev-server": "~3.11.0",
     "cypress": "~4.10.0",
-    "start-server-and-test": "~1.11.1"
+    "start-server-and-test": "~1.11.2"
   },
   "dependencies": {
     "@ideal-postcodes/core-browser": "~1.2.1"
