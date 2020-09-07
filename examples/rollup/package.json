@@ -20,7 +20,7 @@
     "rollup-plugin-babel": "~4.4.0",
     "rollup-plugin-commonjs": "~10.1.0",
     "rollup-plugin-node-resolve": "~5.2.0",
-    "cypress": "~5.0.0",
+    "cypress": "~5.1.0",
     "start-server-and-test": "~1.11.3"
   },
   "dependencies": {
