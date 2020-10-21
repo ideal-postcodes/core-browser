@@ -18,7 +18,7 @@
   },
   "scripts": {
     "set-env": "node",
-    "build": "tsc",
+    "build": "tsc && tsc -p tsconfig.esm.json",
     "semantic-release": "semantic-release --no-ci",
     "lint": "eslint lib/**/*.ts",
     "coverage": "codecov",
@@ -33,9 +33,11 @@
     "extends": "@cablanchard/semantic-release/dist/npm"
   },
   "main": "dist/index.js",
+  "module": "esm/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "esm"
   ],
   "prettier": {
     "editorconfig": true,
@@ -55,7 +57,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@ideal-postcodes/core-interface": "~1.6.0"
+    "@ideal-postcodes/core-interface": "~1.7.0"
   },
   "devDependencies": {
     "@cablanchard/eslint-config": "~2.0.1",
