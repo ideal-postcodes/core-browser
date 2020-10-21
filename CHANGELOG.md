@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/ideal-postcodes/core-browser/compare/1.3.0...1.4.0) (2020-10-21)
+
+
+### Features
+
+* **ESM:** Add ESM build ([ef825b8](https://github.com/ideal-postcodes/core-browser/commit/ef825b8f31465996ab5fed9fc0808faaa169b45c))
+
 # [1.3.0](https://github.com/ideal-postcodes/core-browser/compare/1.2.1...1.3.0) (2020-08-07)
 
 
