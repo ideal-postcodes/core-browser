@@ -3,7 +3,10 @@ import { Client } from "../lib/client";
 
 const SUCCESS = 200;
 
-const api_key = process.env.VALID_API_KEY || "iddqd";
+//@ts-ignore
+const args = __karma__.config.args;
+const api_key = args[0] || "iddqd";
+
 const client = new Client({ api_key });
 const { IdpcInvalidKeyError, IdpcRequestFailedError } = Client.errors;
 
