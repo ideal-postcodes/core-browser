@@ -10,10 +10,13 @@ import * as basic from "./config";
 
 const browsers = ["ChromeHeadless"];
 
+const client = { args: [<string>process.env["CYPRESS_API_KEY"]] };
+
 module.exports = (config: any): void =>
   config.set({
     ...basic,
     browsers,
+    client,
     plugins: [
       "karma-mocha",
       "karma-typescript",
