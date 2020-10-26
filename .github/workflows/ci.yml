@@ -2,45 +2,40 @@ name: CI
 
 on:
   push:
-    branches:
-      - master
-  schedule:
-    cron: "8 8 * * 1"
-    branches:
-      - master
 
 jobs:
-  runs-on: ubuntu-16.04
+  ci:     
+    runs-on: ubuntu-latest
 
-  strategy:
-    matrix:
-      node-version: [14.x]
+    strategy:
+      matrix:
+        node-version: [14.x]
 
-  steps:
-    - uses: actions/checkout@v1
+    steps:
+      - uses: actions/checkout@v1
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Cache node modules
-      uses: actions/cache@v2
-      with:
-        path: ~/.npm
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}-${{ matrix.node-version }}
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}-${{ matrix.node-version }}
 
-    - name: Install
-      run: npm install
+      - name: Install
+        run: npm install
       
-    - name: Test
-      run: npm run lint
+      - name: Test
+        run: npm run lint
 
-    - name: Test
-      run: npm test
+      - name: Test
+        run: npm test
 
-    - name: Build
-      run: npm run build
+      - name: Build
+        run: npm run build
 
-    - name: Coverage
-      run: npm run coverage
+      - name: Coverage
+        run: npm run coverage
