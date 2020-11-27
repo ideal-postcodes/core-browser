@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/ideal-postcodes/core-browser/compare/1.5.1...1.5.2) (2020-11-27)
+
+
+### Bug Fixes
+
+* **tsconfig:** Bump tsconfig ([d512e56](https://github.com/ideal-postcodes/core-browser/commit/d512e562ed5572782b0ae5f96c97358e4cb3aa52))
+
 ## [1.5.1](https://github.com/ideal-postcodes/core-browser/compare/1.5.0...1.5.1) (2020-11-27)
 
 
