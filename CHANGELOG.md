@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/ideal-postcodes/core-browser/compare/1.5.0...1.5.1) (2020-11-27)
+
+
+### Bug Fixes
+
+* **Core Interface:** Bump version ([48dcb89](https://github.com/ideal-postcodes/core-browser/commit/48dcb89515e57db9d17d47e7a98bc5198257a99d))
+
 # [1.5.0](https://github.com/ideal-postcodes/core-browser/compare/1.4.0...1.5.0) (2020-10-26)
 
 
