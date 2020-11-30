@@ -24,7 +24,7 @@
     "start-server-and-test": "~1.11.6"
   },
   "dependencies": {
-    "@ideal-postcodes/core-browser": "~1.5.0",
+    "@ideal-postcodes/core-browser": "~1.5.2",
     "core-js": "~3.8.0"
   }
 }
