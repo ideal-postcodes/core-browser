@@ -21,7 +21,7 @@
     "rollup-plugin-commonjs": "~10.1.0",
     "rollup-plugin-node-resolve": "~5.2.0",
     "cypress": "~6.2.0",
-    "start-server-and-test": "~1.11.6"
+    "start-server-and-test": "~1.11.7"
   },
   "dependencies": {
     "@ideal-postcodes/core-browser": "~1.5.2",
