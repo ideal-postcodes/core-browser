@@ -87,7 +87,7 @@
     "nock": "~13.0.0",
     "prettier": "~2.2.1",
     "promise-polyfill": "~8.2.0",
-    "puppeteer": "~5.5.0",
+    "puppeteer": "~7.0.1",
     "regenerator-runtime": "~0.13.3",
     "semantic-release": "~17.3.0",
     "sinon": "~9.2.0",
