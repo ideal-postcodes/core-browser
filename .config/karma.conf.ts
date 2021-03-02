@@ -3,12 +3,15 @@
  * - Headless chrome
  */
 
-import { executablePath } from "puppeteer";
-process.env.CHROME_BIN = executablePath();
-
 import * as basic from "./config";
 
-const browsers = ["ChromeHeadless"];
+const browsers = ["HeadlessChrome"];
+const customLaunchers = {
+  HeadlessChrome: {
+    base: "ChromeHeadless",
+    flags: ["--no-sandbox"],
+  },
+};
 
 const client = { args: [<string>process.env["CYPRESS_API_KEY"]] };
 
@@ -16,6 +19,7 @@ module.exports = (config: any): void =>
   config.set({
     ...basic,
     browsers,
+    customLaunchers,
     client,
     plugins: [
       "karma-mocha",
