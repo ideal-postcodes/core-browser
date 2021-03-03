@@ -13,18 +13,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "~7.12.10",
-    "@babel/preset-env": "~7.12.11",
+    "@babel/core": "~7.13.8",
+    "@babel/preset-env": "~7.13.8",
     "http-server": "~0.12.3",
-    "rollup": "~2.38.3",
+    "rollup": "~2.40.0",
     "rollup-plugin-babel": "~4.4.0",
     "rollup-plugin-commonjs": "~10.1.0",
     "rollup-plugin-node-resolve": "~5.2.0",
-    "cypress": "~6.4.0",
+    "cypress": "~6.5.0",
     "start-server-and-test": "~1.12.0"
   },
   "dependencies": {
     "@ideal-postcodes/core-browser": "~1.5.2",
-    "core-js": "~3.8.3"
+    "core-js": "~3.9.1"
   }
 }
