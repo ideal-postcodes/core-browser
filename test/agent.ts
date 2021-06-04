@@ -1,9 +1,10 @@
 import * as sinon from "sinon";
 import { assert } from "chai";
 import { Agent, parseQuery, toHeader } from "../lib/agent";
+import { errors } from "@ideal-postcodes/core-interface";
 import { Client } from "../lib/client";
 
-const { IdealPostcodesError } = Client.errors;
+const { IdealPostcodesError } = errors;
 
 type HttpVerb = "GET" | "POST";
 
@@ -26,7 +27,7 @@ const testRequestHeaders = (
   request: Request,
   header: Record<string, string>
 ): void => {
-  Object.keys(header).forEach(key => {
+  Object.keys(header).forEach((key) => {
     assert.equal(request.headers[key], header[key]);
   });
 };
@@ -35,14 +36,14 @@ const testRequest = (
   request: Request,
   expectedAttributes: Record<string, any>
 ): void => {
-  Object.keys(expectedAttributes).forEach(key => {
+  Object.keys(expectedAttributes).forEach((key) => {
     // Some browsers will drop unexpected request attributes althogether
     if (request[key] !== undefined)
       assert.equal(request[key], expectedAttributes[key]);
   });
 };
 
-const defaultResponse = header =>
+const defaultResponse = (header) =>
   new Response("{}", {
     status: SUCCESS,
     statusText: "OK",
@@ -52,7 +53,7 @@ const defaultResponse = header =>
 describe("Agent", () => {
   let agent: Agent;
 
-  beforeEach(function(this: any) {
+  beforeEach(function (this: any) {
     agent = new Agent();
     this.timeout(10000);
   });
@@ -202,7 +203,7 @@ describe("Agent", () => {
         before(() => {
           abortStub = sinon
             .stub(window.AbortController.prototype, "abort")
-            .callsFake(function() {
+            .callsFake(function () {
               abortCalled = true;
             });
         });

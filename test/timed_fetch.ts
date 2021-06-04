@@ -1,8 +1,9 @@
 import * as sinon from "sinon";
 import { assert } from "chai";
-import { Client } from "../lib/client";
-const { IdealPostcodesError } = Client.errors;
+import { Client, errors } from "../lib/index";
 import { timedFetch } from "../lib/timed_fetch";
+
+const { IdealPostcodesError } = errors;
 
 type HttpVerb = "GET";
 

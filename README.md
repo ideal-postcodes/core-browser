@@ -69,7 +69,7 @@ npm install @ideal-postcodes/core-browser
 #### Instantiate
 
 ```javascript
-import { Client } from "@ideal-postcodes/core-browser"
+import { Client } from "@ideal-postcodes/core-browser";
 
 const client = new Client({ api_key: "iddqd" });
 ```
@@ -79,16 +79,17 @@ const client = new Client({ api_key: "iddqd" });
 #### Use
 
 ```javascript
-const addresses = await client.lookupPostcode({ postcode: "SW1A2AA" });
+const addresses = await lookupPostcode({ client: client, postcode: "SW1A2AA" });
 ```
 
 #### Catch Errors
 
 ```javascript
-const { IdpcRequestFailedError } = Client.errors;
+import { errors } from "@ideal-postcodes/core-browser";
+const { IdpcRequestFailedError } = errors;
 
 try {
-  await client.lookupAddress({ query: "10 downing street" });
+  await lookupAddress({ client, query: "10 downing street" });
 } catch (error) {
   if (error instanceof IdpcRequestFailedError) {
     // IdpcRequestFailedError indicates a 402 response code
@@ -124,7 +125,7 @@ Return addresses associated with a given `postcode`
 ```javascript
 const postcode = "id11qd";
 
-const addresses = await client.lookupPostcode({ postcode });
+const addresses = await lookupPostcode({ client, postcode });
 ```
 
 [Method options](https://core-interface.ideal-postcodes.dev/interfaces/lookuppostcodeoptions.html)
@@ -136,7 +137,7 @@ Return addresses associated with a given `query`
 ```javascript
 const query = "10 downing street sw1a";
 
-const addresses = await client.lookupAddress({ query });
+const addresses = await lookupAddress({ client, query });
 ```
 
 [Method options](https://core-interface.ideal-postcodes.dev/interfaces/lookupaddressoptions.html)
@@ -150,7 +151,7 @@ Invalid UDPRN will return `null`
 ```javascript
 const udprn = 23747771;
 
-const address = await client.lookupUdprn({ udprn });
+const address = await lookupUdprn({ client, udprn });
 ```
 
 [Method options](https://core-interface.ideal-postcodes.dev/interfaces/lookupudprnoptions.html)
