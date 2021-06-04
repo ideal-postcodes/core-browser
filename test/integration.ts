@@ -1,5 +1,7 @@
-import { assert } from "chai";
-import { Client } from "../lib/client";
+import {assert} from "chai";
+import {Client} from "../lib/client";
+import {ping, lookupPostcode} from "../lib/index";
+import {errors} from "@ideal-postcodes/core-interface";
 
 const SUCCESS = 200;
 
@@ -7,16 +9,16 @@ const SUCCESS = 200;
 const args = __karma__.config.args;
 const api_key = args[0] || "iddqd";
 
-const client = new Client({ api_key });
-const { IdpcInvalidKeyError, IdpcRequestFailedError } = Client.errors;
+const client = new Client({api_key});
+const {IdpcInvalidKeyError, IdpcRequestFailedError} = errors;
 
 describe("Client integration test", () => {
   describe("ping", () => {
     it("pings /", async () => {
       try {
-        const response = await client.ping();
+        const response = await ping(client);
         assert.equal(response.httpStatus, SUCCESS);
-      } catch(error) {
+      } catch (error) {
         return error;
       }
     });
@@ -29,7 +31,7 @@ describe("Client integration test", () => {
   describe("lookupPostcode", () => {
     it("retrieves postcode", async () => {
       const postcode = "SW1A 2AA";
-      const addresses = await client.lookupPostcode({ postcode });
+      const addresses = await lookupPostcode({client, postcode});
 
       assert.isTrue(addresses.length > 0);
       assert.equal(addresses[0].postcode, postcode);
@@ -37,14 +39,14 @@ describe("Client integration test", () => {
 
     it("returns empty array for invalid postcode", async () => {
       const postcode = "Definitely bogus";
-      const addresses = await client.lookupPostcode({ postcode });
+      const addresses = await lookupPostcode({client, postcode});
       assert.deepEqual(addresses, []);
     });
 
     it("returns an error for limit breached", async () => {
       const postcode = "ID1 CLIP";
       try {
-        await client.lookupPostcode({ postcode });
+        await lookupPostcode({client, postcode});
       } catch (error) {
         assert.isTrue(error instanceof IdpcRequestFailedError);
         return;
@@ -55,7 +57,7 @@ describe("Client integration test", () => {
     it("returns an error for balance depleted", async () => {
       const postcode = "ID1 CHOP";
       try {
-        await client.lookupPostcode({ postcode });
+        await lookupPostcode({client, postcode});
       } catch (error) {
         assert.isTrue(error instanceof IdpcRequestFailedError);
         return;
@@ -66,7 +68,7 @@ describe("Client integration test", () => {
     it("returns an error for invalid key", async () => {
       const postcode = "SW1A 2AA";
       try {
-        await client.lookupPostcode({ postcode, api_key: "badKey" });
+        await lookupPostcode({client, postcode, api_key: "badKey"});
       } catch (error) {
         assert.isTrue(error instanceof IdpcInvalidKeyError);
         return;

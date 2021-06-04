@@ -1,13 +1,14 @@
 import * as sinon from "sinon";
 import { assert } from "chai";
-import { Client } from "../lib/client";
-const { IdealPostcodesError } = Client.errors;
+import { errors } from "@ideal-postcodes/core-interface";
+const { IdealPostcodesError } = errors;
 import { timedFetch } from "../lib/timed_fetch";
 
 type HttpVerb = "GET";
 
 describe("timedFetch", () => {
   afterEach(() => {
+    // @ts-ignore
     const f = window.fetch as sinon.stub;
     if (f.restore) f.restore();
   });
@@ -31,8 +32,8 @@ describe("timedFetch", () => {
 
   it("returns timeout error", async () => {
     const timeout = 50;
-    const stub = sinon.stub(window, "fetch").returns(
-      new Promise((resolve, reject) => {
+    sinon.stub(window, "fetch").returns(
+      new Promise((resolve) => {
         setTimeout(() => resolve(defaultResponse()), timeout + 50);
       })
     );

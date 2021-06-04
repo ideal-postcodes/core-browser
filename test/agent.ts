@@ -1,9 +1,9 @@
 import * as sinon from "sinon";
 import { assert } from "chai";
 import { Agent, parseQuery, toHeader } from "../lib/agent";
-import { Client } from "../lib/client";
+import { errors } from "@ideal-postcodes/core-interface";
 
-const { IdealPostcodesError } = Client.errors;
+const { IdealPostcodesError } = errors;
 
 type HttpVerb = "GET" | "POST";
 
@@ -27,6 +27,7 @@ const testRequestHeaders = (
   header: Record<string, string>
 ): void => {
   Object.keys(header).forEach(key => {
+    // @ts-ignore
     assert.equal(request.headers[key], header[key]);
   });
 };
@@ -35,14 +36,16 @@ const testRequest = (
   request: Request,
   expectedAttributes: Record<string, any>
 ): void => {
-  Object.keys(expectedAttributes).forEach(key => {
+  Object.keys(expectedAttributes).forEach((key) => {
     // Some browsers will drop unexpected request attributes althogether
+    // @ts-ignore
     if (request[key] !== undefined)
+      // @ts-ignore
       assert.equal(request[key], expectedAttributes[key]);
   });
 };
 
-const defaultResponse = header =>
+const defaultResponse = (header: any) =>
   new Response("{}", {
     status: SUCCESS,
     statusText: "OK",
@@ -58,6 +61,7 @@ describe("Agent", () => {
   });
 
   afterEach(() => {
+    // @ts-ignore
     const f = window.fetch as sinon.stub;
     if (f.restore) f.restore();
   });
@@ -106,7 +110,9 @@ describe("Agent", () => {
       const requestedUrl = stub.getCall(0).args[0];
       const request = stub.getCall(0).args[1];
       assert.equal(url + parseQuery(query), requestedUrl);
+      // @ts-ignore
       testRequest(request, { method, ...requestDefaults });
+      // @ts-ignore
       testRequestHeaders(request, header);
     });
 
@@ -139,9 +145,11 @@ describe("Agent", () => {
       sinon.assert.calledOnce(stub);
       const requestedUrl = stub.getCall(0).args[0];
       const request = stub.getCall(0).args[1];
-      const httpRequest = stub.getCall(0);
+      stub.getCall(0);
       assert.equal(url + parseQuery(query), requestedUrl);
+      // @ts-ignore
       testRequest(request, { method, ...requestDefaults });
+      // @ts-ignore
       testRequestHeaders(request, header);
       assert.deepEqual(body, httpResponse.body);
     });
@@ -163,6 +171,7 @@ describe("Agent", () => {
 
         sinon.assert.calledOnce(stub);
         const request = stub.getCall(0).args[1];
+        // @ts-ignore
         testRequest(request, {
           ...newDefaults,
         });
@@ -172,11 +181,12 @@ describe("Agent", () => {
 
   describe("Timeout", () => {
     const delayedResponse = (timeout: number) =>
-      new Promise((resolve, reject) => {
+      new Promise((resolve) => {
         setTimeout(() => resolve(defaultResponse({})), timeout);
       });
 
     it("applies timeout", async () => {
+      // @ts-ignore
       const stub = sinon.stub(window, "fetch").returns(delayedResponse(100));
 
       try {
@@ -196,7 +206,7 @@ describe("Agent", () => {
 
     if (window.AbortController) {
       describe("when AbortController present", () => {
-        let abortStub;
+        let abortStub: any;
         let abortCalled = false;
 
         before(() => {
@@ -212,6 +222,7 @@ describe("Agent", () => {
         it("aborts request if AbortController present", async () => {
           const stub = sinon
             .stub(window, "fetch")
+            // @ts-ignore
             .returns(delayedResponse(100));
 
           try {
@@ -232,6 +243,7 @@ describe("Agent", () => {
       before(() => {
         if (window.AbortController === undefined) return;
         const AbortController = window.AbortController;
+        // @ts-ignore
         window.AbortController = undefined;
         unwind = () => (window.AbortController = AbortController);
       });
@@ -239,6 +251,7 @@ describe("Agent", () => {
       after(unwind);
 
       it("does not abort request if no AbortController", async () => {
+        // @ts-ignore
         const stub = sinon.stub(window, "fetch").returns(delayedResponse(100));
 
         try {
