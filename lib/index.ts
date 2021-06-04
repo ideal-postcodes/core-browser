@@ -1,5 +1,15 @@
-export * from "@ideal-postcodes/core-interface";
-import { Client } from "./client";
-import { Agent } from "./agent";
+/**
+ * @module Library Exports
+ */
 
-export { Client, Agent };
+/**
+ * Export core-interface helpers and resources
+ */
+export * from "@ideal-postcodes/core-interface";
+
+/**
+ * Export HTTP Client with HTTP agent that supports `fetch`
+ */
+export { Client } from "./client";
+
+export { Agent } from "./agent";

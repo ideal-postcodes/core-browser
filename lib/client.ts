@@ -1,9 +1,16 @@
+/**
+ * @module Client
+ */
+
 import {
   Client as CoreInterface,
   Config,
 } from "@ideal-postcodes/core-interface";
 import { Agent } from "./agent";
 
+/**
+ * Ideal Postcodes HTTP Client which injects a HTTP Agent supported `fetch`
+ */
 export class Client extends CoreInterface {
   /**
    * Client constructor extends CoreInterface
