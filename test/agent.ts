@@ -1,7 +1,7 @@
 import * as sinon from "sinon";
 import { assert } from "chai";
 import { Agent, parseQuery, toHeader } from "../lib/agent";
-import { errors } from "@ideal-postcodes/core-interface";
+import { errors } from "../lib";
 
 const { IdealPostcodesError } = errors;
 

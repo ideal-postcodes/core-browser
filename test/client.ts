@@ -2,7 +2,7 @@ import { assert } from "chai";
 import { Client } from "../lib/client";
 import {
 defaults
-} from "@ideal-postcodes/core-interface";
+} from "../lib";
 
 describe("Client", () => {
   describe("instantiation", () => {

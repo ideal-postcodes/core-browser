@@ -3,7 +3,7 @@ import {
   errors,
   HttpResponse,
   HttpRequest,
-} from "@ideal-postcodes/core-interface";
+} from "../lib";
 import { timedFetch } from "./timed_fetch";
 
 /**

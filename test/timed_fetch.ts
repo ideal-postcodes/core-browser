@@ -1,6 +1,6 @@
 import * as sinon from "sinon";
 import { assert } from "chai";
-import { errors } from "@ideal-postcodes/core-interface";
+import { errors } from "../lib";
 const { IdealPostcodesError } = errors;
 import { timedFetch } from "../lib/timed_fetch";
 

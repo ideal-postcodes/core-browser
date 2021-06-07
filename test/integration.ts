@@ -1,7 +1,6 @@
 import { assert } from "chai";
 import { Client } from "../lib/client";
-import { ping, lookupPostcode } from "@ideal-postcodes/core-interface";
-import { errors } from "@ideal-postcodes/core-interface";
+import { ping, lookupPostcode, errors } from "../lib";
 
 const SUCCESS = 200;
 
@@ -9,7 +8,7 @@ const SUCCESS = 200;
 const args = __karma__.config.args;
 const api_key = args[0] || "iddqd";
 
-const client = new Client({api_key});
+const client = new Client({ api_key });
 const { IdpcInvalidKeyError, IdpcRequestFailedError } = errors;
 
 describe("Client integration test", () => {
