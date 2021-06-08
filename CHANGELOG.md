@@ -1,3 +1,23 @@
+# [2.0.0](https://github.com/ideal-postcodes/core-browser/compare/1.5.2...2.0.0) (2021-06-08)
+
+
+### Features
+
+* **Core Interface:** Upgrade to v2 ([a7f958f](https://github.com/ideal-postcodes/core-browser/commit/a7f958f0c1bc8e3c8e42bdc2df0bac658c5e4d43))
+
+
+### BREAKING CHANGES
+
+* **Core Interface:** - Package now exports a `defaults` object
+- Client.defaults has been removed
+- All client config is now stored in `client.config`
+- All resources have been removed from the client. Instead retrieve
+these from the library and inject the client. E.g.
+`client.postcodes.retrieve` becomes `postcodes.retrieve(client, ...)`
+- Helper methods (like lookupPostcode, ping) have been removed from the client.
+Instead retrieve these from teh library and inject the client. E.g.
+`client.lookupPostcode` becomes `lookupPostcode(client, ...)`
+
 ## [1.5.2](https://github.com/ideal-postcodes/core-browser/compare/1.5.1...1.5.2) (2020-11-27)
 
 
