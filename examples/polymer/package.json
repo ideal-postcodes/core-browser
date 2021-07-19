@@ -11,7 +11,7 @@
     "test": "start-server-and-test 'polymer serve' http://localhost:8081 cy:run"
   },
   "dependencies": {
-    "@ideal-postcodes/core-browser-bundled": "~1.2.0",
+    "@ideal-postcodes/core-browser-bundled": "~2.0.0",
     "@polymer/polymer": "~3.0.0",
     "@webcomponents/webcomponentsjs": "~1.0.20"
   },

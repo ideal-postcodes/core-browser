@@ -1,6 +1,6 @@
 import { PolymerElement, html } from "@polymer/polymer/polymer-element.js";
 
-import { Client } from "@ideal-postcodes/core-browser-bundled";
+import { Client, lookupPostcode } from "@ideal-postcodes/core-browser-bundled";
 
 class IdealPostcodesElement extends PolymerElement {
   constructor() {
@@ -11,8 +11,7 @@ class IdealPostcodesElement extends PolymerElement {
 
     const client = new Client({ api_key: "iddqd" });
     const postcode = "ID1 1QD";
-    client
-      .lookupPostcode({ postcode })
+    lookupPostcode({ client, postcode })
       .then(apiResult => (this.apiResult = apiResult));
   }
 
