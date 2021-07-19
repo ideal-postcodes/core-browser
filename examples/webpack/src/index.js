@@ -1,4 +1,4 @@
-import { Client, lookupPostcode } from "@ideal-postcodes/core-browser";
+import { Client, lookupPostcode } from "@ideal-postcodes/core-browser-bundled";
 
 const client = new Client({ api_key: "iddqd" });
 

@@ -4,14 +4,16 @@
 
 ### Install
 
+Using the `-bundled` version is simplest for webpack, as this ships the pre-transpiled version of core-browser.
+
 ```bash
-npm install --save @ideal-postcodes/core-browser
+npm install --save @ideal-postcodes/core-browser-bundled
 ```
 
 ### Usage
 
 ```javascript
-import { Client } from "@ideal-postcodes/core-browser";
+import { Client } from "@ideal-postcodes/core-browser-bundled";
 ```
 
 ## Run this demo
