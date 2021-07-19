@@ -13,12 +13,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "cypress": "~6.5.0",
+    "path-browserify": "~1.0.1",
+    "start-server-and-test": "~1.11.7",
     "webpack": "~5.24.2",
     "webpack-cli": "~4.5.0",
-    "webpack-dev-server": "~3.11.2",
-    "cypress": "~6.5.0",
-    "start-server-and-test": "~1.11.7",
-    "path-browserify": "~1.0.1"
+    "webpack-dev-server": "~3.11.2"
   },
   "dependencies": {
     "@ideal-postcodes/core-browser": "~2.0.0"
