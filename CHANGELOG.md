@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/ideal-postcodes/core-browser/compare/2.0.2...2.0.3) (2021-07-23)
+
+
+### Bug Fixes
+
+* **Tsconfig:** Fix target to ES2020 ([c42cfe7](https://github.com/ideal-postcodes/core-browser/commit/c42cfe76edd04887974375ccedfdec1791ca120f))
+
 ## [2.0.2](https://github.com/ideal-postcodes/core-browser/compare/2.0.1...2.0.2) (2021-07-23)
 
 
