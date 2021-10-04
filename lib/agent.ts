@@ -30,7 +30,7 @@ const toParam = (key: string, value: string): string =>
 export const parseQuery = (query: StringMap): string => {
   const keys = Object.keys(query);
   if (keys.length === 0) return "";
-  return "?" + keys.map(key => toParam(key, query[key])).join("&");
+  return "?" + keys.map((key) => toParam(key, query[key])).join("&");
 };
 
 /**
@@ -116,18 +116,20 @@ export class Agent implements IAgent {
     try {
       if (body !== undefined) requestInit.body = JSON.stringify(body);
     } catch (error) {
-      return handleError(error);
+      return handleError(error as Error);
     }
 
     const uri = `${url}${parseQuery(query)}`;
 
     let response: Response;
     return timedFetch(uri, requestInit, timeout, abortController)
-      .then(r => {
+      .then((r) => {
         response = r;
         return r.json();
       })
-      .then(responseBody => toHttpResponse(httpRequest, response, responseBody))
+      .then((responseBody) =>
+        toHttpResponse(httpRequest, response, responseBody)
+      )
       .catch(handleError);
   }
 }
