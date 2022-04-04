@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/ideal-postcodes/core-browser/compare/3.0.0...3.0.1) (2022-04-04)
+
+
+### Bug Fixes
+
+* **Core-Interface:** Update to 3.1.0 ([045c77e](https://github.com/ideal-postcodes/core-browser/commit/045c77e44420ae252f28c59ef804d26ba1e08400))
+
 # [3.0.0](https://github.com/ideal-postcodes/core-browser/compare/2.0.3...3.0.0) (2022-02-14)
 
 
