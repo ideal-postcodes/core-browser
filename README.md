@@ -19,7 +19,7 @@ Our JavaScript client implements a common interface defined at [@ideal-postcodes
 
 High level client documentation can be found at [core-interface](https://github.com/ideal-postcodes/core-interface/blob/master/README.md).
 
-In depth client documentation can be found at [core-interface.ideal-postcodes.dev](https://core-interface.ideal-postcodes.dev).
+In depth client documentation can be found at [core-interface.ideal-postcodes.co.uk](https://core-interface.ideal-postcodes.co.uk).
 
 Tested against [a suite of modern and legacy, mobile and desktop browsers](https://github.com/ideal-postcodes/supported-browsers).
 
@@ -32,19 +32,9 @@ Tested against [a suite of modern and legacy, mobile and desktop browsers](https
 - [Configuration & Usage](#configuration--usage)
 - [Quickstart](#quickstart)
 - [Client Documentation](https://github.com/ideal-postcodes/core-interface/blob/master/README.md)
-- [In Depth Client Documentation](https://core-interface.ideal-postcodes.dev/#documentation)
+- [In Depth Client Documentation](https://core-interface.ideal-postcodes.co.uk/#documentation)
 - [npm Module](https://www.npmjs.com/package/@ideal-postcodes/core-browser)
 - [GitHub Repository](https://github.com/ideal-postcodes/core-browser)
-
-## Example Setup
-
-[![Webpack Status](https://github.com/ideal-postcodes/core-browser/workflows/Webpack%20Demo/badge.svg)](examples/webpack/)
-
-[![Parcel Status](https://github.com/ideal-postcodes/core-browser/workflows/Parcel%20Demo/badge.svg)](examples/parcel/)
-
-[![Rollup Status](https://github.com/ideal-postcodes/core-browser/workflows/Rollup%20Demo/badge.svg)](examples/rollup/)
-
-[![Polymer Status](https://github.com/ideal-postcodes/core-browser/workflows/Polymer%20Demo/badge.svg)](examples/polymer/)
 
 ## Other JavaScript Clients
 
@@ -74,7 +64,7 @@ import { Client } from "@ideal-postcodes/core-browser";
 const client = new Client({ api_key: "iddqd" });
 ```
 
-[Configuration options](https://core-interface.ideal-postcodes.dev/interfaces/client.config)
+[Configuration options](https://core-interface.ideal-postcodes.co.uk/interfaces/client.config)
 
 #### Use
 
@@ -116,7 +106,7 @@ The client exposes a number of simple methods to get at the most common tasks wh
 - [Search for an Address](#search-for-an-address)
 - [Search for an Address by UDPRN](#search-for-an-address-by-udprn)
 
-For a complete list of client methods, including low level resource methods, please see the [core-interface documentation](https://core-interface.ideal-postcodes.dev/#documentation)
+For a complete list of client methods, including low level resource methods, please see the [core-interface documentation](https://core-interface.ideal-postcodes.co.uk/#documentation)
 
 #### Lookup a Postcode
 
@@ -128,7 +118,7 @@ const postcode = "id11qd";
 const addresses = await lookupPostcode({ client, postcode });
 ```
 
-[Method options](https://core-interface.ideal-postcodes.dev/interfaces/helper_methods.lookuppostcodeoptions)
+[Method options](https://core-interface.ideal-postcodes.co.uk/interfaces/helper_methods.lookuppostcodeoptions)
 
 #### Search for an Address
 
@@ -140,7 +130,7 @@ const query = "10 downing street sw1a";
 const addresses = await lookupAddress({ client, query });
 ```
 
-[Method options](https://core-interface.ideal-postcodes.dev/interfaces/helper_methods.lookupaddressoptions)
+[Method options](https://core-interface.ideal-postcodes.co.uk/interfaces/helper_methods.lookupaddressoptions)
 
 #### Search for an Address by UDPRN
 
@@ -154,7 +144,7 @@ const udprn = 23747771;
 const address = await lookupUdprn({ client, udprn });
 ```
 
-[Method options](https://core-interface.ideal-postcodes.dev/interfaces/helper_methods.lookupudprnoptions)
+[Method options](https://core-interface.ideal-postcodes.co.uk/interfaces/helper_methods.lookupudprnoptions)
 
 ## Test
 
