@@ -81,7 +81,7 @@
     "@types/puppeteer": "~5.4.3",
     "chai": "~4.3.0",
     "codecov": "~3.8.0",
-    "core-js": "~3.21.0",
+    "core-js": "~3.28.0",
     "dotenv": "~10.0.0",
     "eslint": "~7.32.0",
     "karma": "~6.3.2",
